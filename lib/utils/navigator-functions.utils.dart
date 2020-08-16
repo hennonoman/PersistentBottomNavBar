@@ -4,7 +4,7 @@ Future<T> pushNewScreen<T extends Object>(
   BuildContext context, {
   @required Widget screen,
   bool withNavBar,
-  bool defaultNavBar=true,
+  bool defaultNavBar=false,
   PageTransitionAnimation pageTransitionAnimation =
       PageTransitionAnimation.cupertino,
   PageRoute customPageRoute,
