@@ -15,6 +15,7 @@ Future<T> pushNewScreen<T extends Object>(
       customPageRoute ??
           getPageRoute(pageTransitionAnimation, enterPage: screen));
 }
+
 Future<T> pushAndRemoveUntil<T extends Object>(
   BuildContext context, {
   @required Widget screen,
@@ -26,9 +27,10 @@ Future<T> pushAndRemoveUntil<T extends Object>(
   if (withNavBar == null) {
     withNavBar = false;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).push(
+  return Navigator.of(context, rootNavigator: !withNavBar).pushAndRemoveUntil(
       customPageRoute ??
-          getPageRoute(pageTransitionAnimation, enterPage: screen));
+          getPageRoute(pageTransitionAnimation, enterPage: screen),
+      (route) => false);
 }
 
 Future<T> pushDynamicScreen<T extends Object>(
