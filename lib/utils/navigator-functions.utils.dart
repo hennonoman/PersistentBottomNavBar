@@ -16,7 +16,7 @@ Future<T> pushNewScreen<T extends Object>(
           getPageRoute(pageTransitionAnimation, enterPage: screen));
 }
 
-Future<T> pushAndRemoveUntil<T extends Object>(
+Future<T> pushAndReplace<T extends Object>(
   BuildContext context, {
   @required Widget screen,
   bool withNavBar,
