@@ -27,10 +27,9 @@ Future<T> pushAndRemoveUntil<T extends Object>(
   if (withNavBar == null) {
     withNavBar = false;
   }
-  return Navigator.of(context, rootNavigator: !withNavBar).pushAndRemoveUntil(
-      customPageRoute ??
-          getPageRoute(pageTransitionAnimation, enterPage: screen),
-      (route) => false);
+  return Navigator.of(context, rootNavigator: !withNavBar).pushReplacement(
+    customPageRoute ?? getPageRoute(pageTransitionAnimation, enterPage: screen),
+  );
 }
 
 Future<T> pushDynamicScreen<T extends Object>(
